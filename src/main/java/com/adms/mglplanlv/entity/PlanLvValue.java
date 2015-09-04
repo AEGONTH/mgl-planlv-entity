@@ -10,6 +10,16 @@ import com.adms.common.domain.BaseDomain;
 
 @Entity
 @NamedNativeQueries({
+//	MGL_PLAN_LV_FACTORY_MTD
+	@NamedNativeQuery(
+			name = "execPlanLvAllMTD",
+			query = " EXEC [dbo].[MGL_PLAN_LV_FACTORY_MTD] ?, ? ",
+			resultClass = PlanLvValue.class),
+	@NamedNativeQuery(
+			name = "execPlanLvAllYTD",
+			query = " EXEC [dbo].[MGL_PLAN_LV_FACTORY_YTD] ?, ? ",
+			resultClass = PlanLvValue.class),
+	
 //	<!-- MTL Kbank -->
 	@NamedNativeQuery(
 			name = "execPlanLvValueForMtlKbankMTD",
@@ -69,6 +79,16 @@ import com.adms.common.domain.BaseDomain;
 			name = "execPlanLvValueForFWDTVDYTD",
 			query = " EXEC [dbo].[MGL_PLAN_LV_DATA_FOR_FWD_TVD_YTD] ?, ? ",
 			resultClass = PlanLvValue.class),
+	
+	//<!-- GEN Health -->
+	@NamedNativeQuery(
+		name = "execPlanLvValueForGENHEALTHMTD",
+		query = " EXEC [dbo].[MGL_PLAN_LV_DATA_FOR_GEN_HEALTH_MTD] ?, ? ",
+		resultClass = PlanLvValue.class),
+	@NamedNativeQuery(
+		name = "execPlanLvValueForGENHEALTHYTD",
+		query = " EXEC [dbo].[MGL_PLAN_LV_DATA_FOR_GEN_HEALTH_YTD] ?, ? ",
+		resultClass = PlanLvValue.class)
 })
 public class PlanLvValue extends BaseDomain {
 
