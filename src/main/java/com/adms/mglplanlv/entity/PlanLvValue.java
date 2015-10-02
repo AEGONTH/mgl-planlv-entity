@@ -10,6 +10,12 @@ import com.adms.common.domain.BaseDomain;
 
 @Entity
 @NamedNativeQueries({
+//	MGL_PLAN_LV_FACTORY
+	@NamedNativeQuery(
+			name = "execPlanLvAll",
+			query = " EXEC [dbo].[MGL_PLAN_LV_FACTORY] ?, ?, ? ",
+			resultClass = PlanLvValue.class),
+	
 //	MGL_PLAN_LV_FACTORY_MTD
 	@NamedNativeQuery(
 			name = "execPlanLvAllMTD",
