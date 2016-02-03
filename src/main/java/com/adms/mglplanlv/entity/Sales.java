@@ -22,7 +22,7 @@ import com.adms.common.domain.BaseAuditDomain;
 @Table(name = "SALES")
 public class Sales extends BaseAuditDomain {
 
-	private static final long serialVersionUID = -5830506480763914490L;
+	private static final long serialVersionUID = 5866538724074879526L;
 
 	@Id
 	@Column(name = "ID")
@@ -60,7 +60,7 @@ public class Sales extends BaseAuditDomain {
 
 	@Column(name = "ITEM_NO")
 	private Integer itemNo;
-
+	
 	@Column(name = "CUSTOMER_FULL_NAME")
 	private String customerFullName;
 
@@ -86,23 +86,20 @@ public class Sales extends BaseAuditDomain {
 	private BigDecimal annualFyp;
 
 	@Column(name = "PROTECT_AMOUNT")
-	private BigDecimal protectAmount;
-
+	private String protectAmount;
+	
 	@Column(name="PAYMENT_METHOD")
 	private String paymentMethod;
-
+	
 	@Column(name="PAYMENT_FREQUENCY")
 	private String paymentFrequency;
-
+	
 	@Column(name="QA_STATUS")
 	private String qaStatus;
 
-	@Column(name = "QA_REASON")
+	@Column(name="QA_REASON")
 	private String qaReason;
-
-	@Column(name = "QA_REASON_DETAIL")
-	private String qaReasonDetail;
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -239,11 +236,11 @@ public class Sales extends BaseAuditDomain {
 		this.annualFyp = annualFyp;
 	}
 
-	public BigDecimal getProtectAmount() {
+	public String getProtectAmount() {
 		return protectAmount;
 	}
 
-	public void setProtectAmount(BigDecimal protectAmount) {
+	public void setProtectAmount(String protectAmount) {
 		this.protectAmount = protectAmount;
 	}
 
@@ -261,47 +258,6 @@ public class Sales extends BaseAuditDomain {
 
 	public void setPaymentFrequency(String paymentFrequency) {
 		this.paymentFrequency = paymentFrequency;
-	}
-
-	public String getQaStatus() {
-		return qaStatus;
-	}
-
-	public void setQaStatus(String qaStatus) {
-		this.qaStatus = qaStatus;
-	}
-
-	public String getQaReason() {
-		return qaReason;
-	}
-
-	public void setQaReason(String qaReason) {
-		this.qaReason = qaReason;
-	}
-
-	public String getQaReasonDetail() {
-		return qaReasonDetail;
-	}
-
-	public void setQaReasonDetail(String qaReasonDetail) {
-		this.qaReasonDetail = qaReasonDetail;
-	}
-
-	@Override
-	public String toString() {
-		return "Sales [id=" + id + ", xReference=" + xReference
-				+ ", xReferenceNew=" + xReferenceNew + ", listLot=" + listLot
-				+ ", tsr=" + tsr + ", supervisor=" + supervisor + ", saleDate="
-				+ saleDate + ", approveDate=" + approveDate + ", itemNo="
-				+ itemNo + ", customerFullName=" + customerFullName
-				+ ", customerTitle=" + customerTitle + ", customerFirstName="
-				+ customerFirstName + ", customerMidName=" + customerMidName
-				+ ", customerLastName=" + customerLastName + ", product="
-				+ product + ", premium=" + premium + ", annualFyp=" + annualFyp
-				+ ", protectAmount=" + protectAmount + ", paymentMethod="
-				+ paymentMethod + ", paymentFrequency=" + paymentFrequency
-				+ ", qaStatus=" + qaStatus + ", qaReason=" + qaReason
-				+ ", qaReasonDetail=" + qaReasonDetail + "]";
 	}
 
 }

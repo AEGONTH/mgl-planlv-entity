@@ -22,6 +22,12 @@ public class Campaign extends BaseAuditDomain {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name="CAMPAIGN_YEAR")
+	private String campaignYear;
+	
+	@Column(name="CAMPAIGN_TYPE")
+	private String campaignType;
+	
 	@Column(name="CAMPAIGN_CODE")
 	private String campaignCode;
 	
@@ -149,6 +155,22 @@ public class Campaign extends BaseAuditDomain {
 
 	public void setCampaignNameMgl(String campaignNameMgl) {
 		this.campaignNameMgl = campaignNameMgl;
+	}
+
+	public String getCampaignYear() {
+		return campaignYear;
+	}
+
+	public void setCampaignYear(String campaignYear) {
+		this.campaignYear = campaignYear;
+	}
+
+	public String getCampaignType() {
+		return campaignType;
+	}
+
+	public void setCampaignType(String campaignType) {
+		this.campaignType = campaignType;
 	}
 
 }
